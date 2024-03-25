@@ -1,21 +1,32 @@
 import styled from 'styled-components';
-import { PrimaryButton } from '~/core/components/Button';
+import {PrimaryButton} from '~/core/components/Button';
 import InputText from '~/core/components/InputText';
 import UIAvatar from '~/core/components/Avatar';
-import { Poll } from '~/icons';
+import {Poll} from '~/icons';
 import PlayCircle from '~/icons/PlayCircle';
+import React from 'react';
+import cx from "clsx";
 
 export const Avatar = styled(UIAvatar)`
   margin-right: 8px;
 `;
 
-export const PostCreatorContainer = styled.div`
-  padding: 16px 20px 12px 16px;
-  border: 1px solid #edeef2;
-  display: flex;
-  background: ${({ theme }) => theme.palette.system.background};
-  border-radius: 4px;
-`;
+// export const PostCreatorContainer = styled.div`
+//   padding: 16px 20px 12px 16px;
+//   border: 1px solid #edeef2;
+//   display: flex;
+//   background: ${({ theme }) => theme.palette.system.background};
+//   border-radius: 4px;
+// `;
+
+export const PostCreatorContainer = ({className, children}: { className: string, children: React.ReactNode }) => {
+    return (
+        <div className={cx('postComposeBar rounded-xl px-4 py-5 mb-5 bg-white shadow flex', className)}>
+            {children}
+        </div>
+    );
+};
+
 
 export const Footer = styled.div`
   padding-top: 12px;

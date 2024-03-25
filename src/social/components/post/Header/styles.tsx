@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
-import { ArrowRight, Shield } from '~/icons';
+import {ReactNode} from 'react';
+import styled, {css} from 'styled-components';
+import {ArrowRight, Shield} from '~/icons';
 
 export const PostHeaderContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const PostInfo = styled.div`
 `;
 
 export const Name = styled.div`
-  ${({ theme }) => theme.typography.title}
+  ${({theme}) => theme.typography.subtitles}
 
   word-break: break-all;
 
@@ -24,15 +24,15 @@ export const Name = styled.div`
 `;
 
 export const ArrowSeparator = styled(ArrowRight).attrs({
-  height: '8px',
-  width: '8px',
+    height: '8px',
+    width: '8px',
 })`
-  color: ${({ theme }) => theme.palette.base.shade1};
+  color: ${({theme}) => theme.palette.base.shade1};
 `;
 
 export const ShieldIcon = styled(Shield).attrs<{ icon?: ReactNode }>({
-  height: '14px',
-  width: '14px',
+    height: '14px',
+    width: '14px',
 })`
   margin-right: 4px;
 `;
@@ -41,13 +41,13 @@ export const ModeratorBadge = styled.div`
   display: flex;
   align-items: center;
   margin-right: 4px;
-  color: ${({ theme }) => theme.palette.base.shade1};
-  ${({ theme }) => theme.typography.captionBold};
+  color: ${({theme}) => theme.palette.base.shade1};
+  ${({theme}) => theme.typography.captionBold};
 `;
 
 export const MessageContainer = styled.div`
-  color: ${({ theme }) => theme.palette.base.shade1};
-  ${({ theme }) => theme.typography.caption}
+  color: ${({theme}) => theme.palette.base.shade1};
+  ${({theme}) => theme.typography.caption}
 
   &::before {
     content: '• ';
@@ -59,7 +59,7 @@ export const AdditionalInfo = styled.div<{ showTime?: boolean }>`
   display: flex;
   align-items: center;
 
-  ${({ showTime }) =>
+  ${({showTime}) =>
     showTime &&
     css`
       & > ${ModeratorBadge} {
