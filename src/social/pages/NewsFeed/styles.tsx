@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeadTitle = styled.h2`
-  ${({ theme }) => theme.typography.headline};
+  ${({theme}) => theme.typography.headline};
 `;
 
 export const MobileContainer = styled.div`
@@ -31,7 +31,7 @@ export const MobileContainer = styled.div`
   }
 `;
 
-export const CommunitySideMenuOverlay = styled.div<{ isOpen: boolean }>`
+export const CommunitySideMenuOverlay = styled.div<{ isopen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -39,19 +39,19 @@ export const CommunitySideMenuOverlay = styled.div<{ isOpen: boolean }>`
   min-height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+  opacity: ${({isopen}) => (isopen ? 1 : 0)};
+  visibility: ${({isopen}) => (isopen ? 'visible' : 'hidden')};
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   cursor: pointer;
 `;
 
-export const StyledCommunitySideMenu = styled(CommunitySideMenu)<{ isOpen: boolean }>`
+export const StyledCommunitySideMenu = styled(CommunitySideMenu)<{ isopen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   min-height: 100%;
   height: 100%;
   z-index: 999;
-  transform: translateX(${({ isOpen }) => (isOpen ? 0 : '-100%')});
+  transform: translateX(${({isopen}) => (isopen ? 0 : '-100%')});
   transition: transform 0.3s ease-in-out;
 `;

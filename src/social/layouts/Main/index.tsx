@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useCustomComponent } from '~/core/providers/CustomComponentsProvider';
+import {useCustomComponent} from '~/core/providers/CustomComponentsProvider';
 
 const Container = styled.div`
   overflow: hidden;
@@ -30,23 +30,23 @@ const Side = styled.div`
 `;
 
 interface LayoutProps {
-  aside: React.ReactNode;
-  children: React.ReactNode;
+    aside: React.ReactNode;
+    children: React.ReactNode;
 }
 
-const Layout = ({ aside, children }: LayoutProps) => {
-  return (
-    <Container>
-      <Main>{children}</Main>
-      <Side>{aside}</Side>
-    </Container>
-  );
+const Layout = ({aside, children}: LayoutProps) => {
+    return (
+        <Container>
+            <Main>{children}</Main>
+            {/*<Side>{aside}</Side>*/}
+        </Container>
+    );
 };
 
 export default (props: LayoutProps) => {
-  const CustomComponentFn = useCustomComponent<LayoutProps>('Layout');
+    const CustomComponentFn = useCustomComponent<LayoutProps>('Layout');
 
-  if (CustomComponentFn) return CustomComponentFn(props);
+    if (CustomComponentFn) return CustomComponentFn(props);
 
-  return <Layout {...props} />;
+    return <Layout {...props} />;
 };
